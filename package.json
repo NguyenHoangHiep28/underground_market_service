@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
 		"dev": "nodemon --watch 'src/**/*.ts' --exec 'yarn start'",
-		"heroku": "node ./build",
 		"start": "ts-node src",
 		"heroku-postbuild": "npm run build"
   }, 
