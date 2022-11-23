@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npm run build",
 		"dev": "nodemon --watch 'src/**/*.ts' --exec 'yarn start'",
-		"start": "ts-node src",
-		"heroku-postbuild": "npm run build"
+		"start": "ts-node src"
   }, 
   "engines": {
     "node": "16.16.0",
