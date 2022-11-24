@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-       "build": "ts-node src",
+       "build": "tsc --build",
 		"dev": "nodemon --watch 'src/**/*.ts' --exec 'yarn start'",
 		"start": "ts-node src"
   }, 
