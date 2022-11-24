@@ -6,7 +6,7 @@
   "scripts": {
        "build": "tsc --build",
 		"dev": "nodemon --watch 'src/**/*.ts' --exec 'yarn start'",
-		"start": "ts-node src"
+		"start": "tsc && node build/index.js"
   }, 
   "engines": {
     "node": "16.16.0",
