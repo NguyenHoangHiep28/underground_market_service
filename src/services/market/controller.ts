@@ -43,11 +43,11 @@ export const listingItem = async (req: Request, res: Response, next: NextFunctio
 		});
     } else {
         const priceE = ethers.utils.parseUnits(price, "ether");
-        const listingItem = await MarketSMC.createMarketItem(NFTContractAddress,tokenId,sellerAddress, priceE
-            // , {gasPrice : increaseGas}
-        );
         while(true) {
             try {
+                const listingItem = await MarketSMC.createMarketItem(NFTContractAddress,tokenId,sellerAddress, priceE
+                    // , {gasPrice : increaseGas}
+                );
                 // const increaseGas = Math.round(hexToDec((await provider.getGasPrice())._hex) * 130 / 100);
                 const transaction =  await listingItem.wait();
                 const events = transaction.events;
@@ -68,3 +68,7 @@ export const listingItem = async (req: Request, res: Response, next: NextFunctio
 function hexToDec(hex : string) {
     return parseInt(hex, 16);
 }
+function sleep (time : number) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+  
